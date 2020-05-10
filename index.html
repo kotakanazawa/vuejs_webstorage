@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h2>TODO List</h2>
+      <p>
+        <input type="text" v-model="newTodo" />
+        <button @click="addTodo">Add Todo</button>
+      </p>
+      <ul>
+        <li v-for="(todo, index) in todos">
+          <span>{{ todo }}</span>
+          <button v-on:click="removeTodo(index)">Remove</button>
+        </li>
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
